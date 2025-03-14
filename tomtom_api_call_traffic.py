@@ -8,6 +8,7 @@ API_KEY = os.getenv("TOMTOM_API_KEY")
 
 def get_traffic_data(latitude, longitude):
     url = f"https://api.tomtom.com/traffic/services/4/flowSegmentData/relative0/10/json?key={API_KEY}&point={latitude},{longitude}"
+    print(url)
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
